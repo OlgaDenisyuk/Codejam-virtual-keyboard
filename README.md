@@ -1,2 +1,2 @@
-# Codejam-virtual-keyboard2
+# Codejam-virtual-keyboard
 Creating virtual keyboard
