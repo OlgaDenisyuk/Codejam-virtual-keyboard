@@ -1,0 +1,51 @@
+body{
+    background: #534d5f3d;
+}
+.container{
+    font: 14px/1 Arial, sans-serif;
+    max-width: 700px;
+    margin:0 auto;
+    padding-top:20px;
+}
+.container textarea{
+    font: 16px/1.5 Arial, sans-serif;
+    width:100%;
+    height:200px;
+    margin-bottom:10px;
+    padding:10px;
+    box-sizing: border-box;
+}
+.keyboard > div{
+    display:flex;
+    width:100%;
+}
+.keyboard > div span{
+    display:inline-block;
+    width:41px;
+    height:41px;
+    line-height:41px;
+    margin:3px;
+    background: #3a424e;
+    color:white;
+    text-align: center;
+    border-radius:5px;
+    cursor: pointer;
+}
+.keyboard > div span.darkened{
+    background: #1c232e;
+}
+.keyboard > div span:hover, .keyboard > div span.active{
+    background: purple;
+}
+.keyboard > div span.active{
+    border-radius:20px;
+    background: rebeccapurple;
+    -webkit-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
+}
+.key2{
+    flex-grow: 1;
+}
+.key7{
+ flex-grow: 6;
+}
