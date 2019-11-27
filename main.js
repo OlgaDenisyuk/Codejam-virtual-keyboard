@@ -1,9 +1,9 @@
 const matrix = [
     [
-        {keyCode: 192, shifted_ru: '®', shifted_en: '~', en: '`', ru: '∏', width:1 },
+        {keyCode: 192, shifted_ru: '–Å', shifted_en: '~', en: '`', ru: '—ë', width:1 },
         {keyCode: 49, shifted_ru: '!', shifted_en: '!', en: '1', ru: '1', width:1 },
         {keyCode: 50, shifted_ru: '"', shifted_en: '@', en: '2', ru: '2', width:1 },
-        {keyCode: 51, shifted_ru: 'π', shifted_en: '#', en: '3', ru: '3', width:1 },
+        {keyCode: 51, shifted_ru: '‚Ññ', shifted_en: '#', en: '3', ru: '3', width:1 },
         {keyCode: 52, shifted_ru: ';', shifted_en: '$', en: '4', ru: '4', width:1 },
         {keyCode: 53, shifted_ru: '%', shifted_en: '%', en: '5', ru: '5', width:1 },
         {keyCode: 54, shifted_ru: ':', shifted_en: '^', en: '6', ru: '6', width:1 },
@@ -17,47 +17,47 @@ const matrix = [
     ],
     [
         {keyCode: 9, title: 'Tab', width:1 },
-        {keyCode: 81, shifted_ru: '…', shifted_en: 'Q', en: 'q', ru: 'È', width:1 },
-        {keyCode: 87, shifted_ru: '÷', shifted_en: 'W', en: 'w', ru: 'ˆ', width:1 },
-        {keyCode: 69, shifted_ru: '”', shifted_en: 'E', en: 'e', ru: 'Û', width:1 },
-        {keyCode: 82, shifted_ru: ' ', shifted_en: 'R', en: 'r', ru: 'Í', width:1 },
-        {keyCode: 84, shifted_ru: '≈', shifted_en: 'T', en: 't', ru: 'Â', width:1 },
-        {keyCode: 89, shifted_ru: 'Õ', shifted_en: 'Y', en: 'y', ru: 'Ì', width:1 },
-        {keyCode: 85, shifted_ru: '√', shifted_en: 'U', en: 'u', ru: '„', width:1 },
-        {keyCode: 73, shifted_ru: 'ÿ', shifted_en: 'I', en: 'i', ru: '¯', width:1 },
-        {keyCode: 79, shifted_ru: 'Ÿ', shifted_en: 'O', en: 'o', ru: '˘', width:1 },
-        {keyCode: 80, shifted_ru: '«', shifted_en: 'P', en: 'p', ru: 'Á', width:1 },
-        {keyCode: 219, shifted_ru: '’', shifted_en: '{', en: '[', ru: 'ı', width:1 },
-        {keyCode: 221, shifted_ru: '⁄', shifted_en: '}', en: ']', ru: '˙', width:1 },
+        {keyCode: 81, shifted_ru: '–ô', shifted_en: 'Q', en: 'q', ru: '–π', width:1 },
+        {keyCode: 87, shifted_ru: '–¶', shifted_en: 'W', en: 'w', ru: '—Ü', width:1 },
+        {keyCode: 69, shifted_ru: '–£', shifted_en: 'E', en: 'e', ru: '—É', width:1 },
+        {keyCode: 82, shifted_ru: '–ö', shifted_en: 'R', en: 'r', ru: '–∫', width:1 },
+        {keyCode: 84, shifted_ru: '–ï', shifted_en: 'T', en: 't', ru: '–µ', width:1 },
+        {keyCode: 89, shifted_ru: '–ù', shifted_en: 'Y', en: 'y', ru: '–Ω', width:1 },
+        {keyCode: 85, shifted_ru: '–ì', shifted_en: 'U', en: 'u', ru: '–≥', width:1 },
+        {keyCode: 73, shifted_ru: '–®', shifted_en: 'I', en: 'i', ru: '—à', width:1 },
+        {keyCode: 79, shifted_ru: '–©', shifted_en: 'O', en: 'o', ru: '—â', width:1 },
+        {keyCode: 80, shifted_ru: '–ó', shifted_en: 'P', en: 'p', ru: '–∑', width:1 },
+        {keyCode: 219, shifted_ru: '–•', shifted_en: '{', en: '[', ru: '—Ö', width:1 },
+        {keyCode: 221, shifted_ru: '–™', shifted_en: '}', en: ']', ru: '—ä', width:1 },
         {keyCode: 220, shifted_ru: '/', shifted_en: '|', en: '\\', ru: '\\', width:1 },
         {keyCode: 46, title: 'Del', width:1 },
     ],
     [
         {keyCode: 20, title: 'CapsLock', width:2 },
-        {keyCode: 65, shifted_ru: '‘', shifted_en: 'A', en: 'a', ru: 'Ù', width:1 },
-        {keyCode: 83, shifted_ru: '€', shifted_en: 'S', en: 's', ru: '˚', width:1 },
-        {keyCode: 68, shifted_ru: '¬', shifted_en: 'D', en: 'd', ru: '‚', width:1 },
-        {keyCode: 70, shifted_ru: '¿', shifted_en: 'F', en: 'f', ru: '‡', width:1 },
-        {keyCode: 71, shifted_ru: 'œ', shifted_en: 'G', en: 'g', ru: 'Ô', width:1 },
-        {keyCode: 72, shifted_ru: '–', shifted_en: 'H', en: 'h', ru: '', width:1 },
-        {keyCode: 74, shifted_ru: 'Œ', shifted_en: 'J', en: 'j', ru: 'Ó', width:1 },
-        {keyCode: 75, shifted_ru: 'À', shifted_en: 'K', en: 'k', ru: 'Î', width:1 },
-        {keyCode: 76, shifted_ru: 'ƒ', shifted_en: 'L', en: 'l', ru: '‰', width:1 },
-        {keyCode: 59, shifted_ru: '∆', shifted_en: ':', en: ';', ru: 'Ê', width:1 },
-        {keyCode: 222, shifted_ru: '›', shifted_en: '"', en: "'", ru: '˝', width:1 },
+        {keyCode: 65, shifted_ru: '–§', shifted_en: 'A', en: 'a', ru: '—Ñ', width:1 },
+        {keyCode: 83, shifted_ru: '–´', shifted_en: 'S', en: 's', ru: '—ã', width:1 },
+        {keyCode: 68, shifted_ru: '–í', shifted_en: 'D', en: 'd', ru: '–≤', width:1 },
+        {keyCode: 70, shifted_ru: '–ê', shifted_en: 'F', en: 'f', ru: '–∞', width:1 },
+        {keyCode: 71, shifted_ru: '–ü', shifted_en: 'G', en: 'g', ru: '–ø', width:1 },
+        {keyCode: 72, shifted_ru: '–†', shifted_en: 'H', en: 'h', ru: '—Ä', width:1 },
+        {keyCode: 74, shifted_ru: '–û', shifted_en: 'J', en: 'j', ru: '–æ', width:1 },
+        {keyCode: 75, shifted_ru: '–õ', shifted_en: 'K', en: 'k', ru: '–ª', width:1 },
+        {keyCode: 76, shifted_ru: '–î', shifted_en: 'L', en: 'l', ru: '–¥', width:1 },
+        {keyCode: 59, shifted_ru: '–ñ', shifted_en: ':', en: ';', ru: '–∂', width:1 },
+        {keyCode: 222, shifted_ru: '–≠', shifted_en: '"', en: "'", ru: '—ç', width:1 },
         {keyCode: 13, value:"\n", title: 'Enter', width:2 },
     ],
     [
         {keyCode: 16, code: 'ShiftLeft', title: 'Shift', width:2 },
-        {keyCode: 90, shifted_ru: 'ﬂ', shifted_en: 'Z', en: 'z', ru: 'ˇ', width:1 },
-        {keyCode: 88, shifted_ru: '◊', shifted_en: 'X', en: 'x', ru: '˜', width:1 },
-        {keyCode: 67, shifted_ru: '—', shifted_en: 'C', en: 'c', ru: 'Ò', width:1 },
-        {keyCode: 86, shifted_ru: 'Ã', shifted_en: 'V', en: 'v', ru: 'Ï', width:1 },
-        {keyCode: 66, shifted_ru: '»', shifted_en: 'B', en: 'b', ru: 'Ë', width:1 },
-        {keyCode: 78, shifted_ru: '“', shifted_en: 'N', en: 'n', ru: 'Ú', width:1 },
-        {keyCode: 77, shifted_ru: '‹', shifted_en: 'M', en: 'm', ru: '¸', width:1 },
-        {keyCode: 188, shifted_ru: '¡', shifted_en: '<', en: ',', ru: '·', width:1 },
-        {keyCode: 190, shifted_ru: 'ﬁ', shifted_en: '>', en: '.', ru: '˛', width:1 },
+        {keyCode: 90, shifted_ru: '–Ø', shifted_en: 'Z', en: 'z', ru: '—è', width:1 },
+        {keyCode: 88, shifted_ru: '–ß', shifted_en: 'X', en: 'x', ru: '—á', width:1 },
+        {keyCode: 67, shifted_ru: '–°', shifted_en: 'C', en: 'c', ru: '—Å', width:1 },
+        {keyCode: 86, shifted_ru: '–ú', shifted_en: 'V', en: 'v', ru: '–º', width:1 },
+        {keyCode: 66, shifted_ru: '–ò', shifted_en: 'B', en: 'b', ru: '–∏', width:1 },
+        {keyCode: 78, shifted_ru: '–¢', shifted_en: 'N', en: 'n', ru: '—Ç', width:1 },
+        {keyCode: 77, shifted_ru: '–¨', shifted_en: 'M', en: 'm', ru: '—å', width:1 },
+        {keyCode: 188, shifted_ru: '–ë', shifted_en: '<', en: ',', ru: '–±', width:1 },
+        {keyCode: 190, shifted_ru: '–Æ', shifted_en: '>', en: '.', ru: '—é', width:1 },
         {keyCode: 191, shifted_ru: ',', shifted_en: '?', en: '/', ru: '.', width:1 },
         {keyCode: 38, title: '&uarr;', width:1 },
         {keyCode: 16, code: 'ShiftRight', title: 'Shift', width:2 },
@@ -133,6 +133,7 @@ const inleft = document.getElementById('37');
 const inright = document.getElementById('39');
 const leftShift = document.querySelector('span[data-about=ShiftLeft]');
 const rightShift = document.querySelector('span[data-about=ShiftRight]');
+
 
 function deactivateKey(){
     for (let elem of buttons) {
@@ -264,23 +265,23 @@ function runOnKeys(func, ...keys) {
     });
 
 }
-
+const activeKeys = {
+    changelang: ['Alt', 'Shift'],
+    capslock: 'CapsLock',
+    tab: 'Tab',
+}
 runOnKeys(
     () => ChangeLang(),
-    "Alt",
-    "Shift"
+    activeKeys.changelang[0],
+    activeKeys.changelang[1]
 );
 runOnKeys(
     () => CapsLock(),
-    "CapsLock"
-);
-runOnKeys(
-    () => CapsLock(),
-    "Shift"
+    activeKeys.capslock
 );
 runOnKeys(
     () => Tab(),
-    "Tab"
+    activeKeys.tab
 );
 function ChangeLang(){
     for( let i = 0; i < matrix.length; i++ ){
