@@ -73,22 +73,22 @@ const matrix = [
         {keyCode: 39, title: '&rarr;', width:1 },
         {keyCode: 17, code: 'ControlRight', title: 'Ctrl', width:1 },
     ]
-]
-let container = document.createElement('div');
-let textarea = document.createElement('textarea');
-let keyboard = document.createElement('div');
+];
+
+const container = document.createElement('div');
+const textarea = document.createElement('textarea');
+const keyboard = document.createElement('div');
 let langru;
-
-document.body.append(container);
-container.append(textarea);
-container.append(keyboard);
-
-container.className = 'container';
-keyboard.className = 'keyboard';
 
 
 function addKey(){
-    localStorage.getItem('key');
+
+    document.body.append(container);
+    container.append(textarea);
+    container.append(keyboard);
+
+    container.className = 'container';
+    keyboard.className = 'keyboard';
 
     for( let i = 0; i < matrix.length; i++ ){
        let row =  document.createElement('div');
@@ -96,43 +96,46 @@ function addKey(){
        row.className = 'row' + i;
 
         for( let j = 0; j < matrix[i].length; j++ ){
-            let key =  document.createElement('span');
-            row.append(key);
-            key.className = 'key' + matrix[i][j].width;
+            let keyValue =  document.createElement('span');
+            row.append(keyValue);
+            keyValue.className = `key${matrix[i][j].width}`;
 
             if(matrix[i][j].en){
                 if(localStorage.getItem('key') === 'true') {
-                    key.innerHTML = matrix[i][j].ru;
+                    keyValue.innerHTML = matrix[i][j].ru;
                 }
                 else{
-                    key.innerHTML = matrix[i][j].en;
+                    keyValue.innerHTML = matrix[i][j].en;
                 }
             }
             else{
-                key.innerHTML = matrix[i][j].title;
-                key.classList.add('darkened');
+                keyValue.innerHTML = matrix[i][j].title;
+                keyValue.classList.add('darkened');
             }
             if(matrix[i][j].code){
-                key.setAttribute('data-about', '' + matrix[i][j].code);
+                keyValue.setAttribute('data-about', `${matrix[i][j].code}`);
             }
 
-        key.id = matrix[i][j].keyCode;    
+        keyValue.id = matrix[i][j].keyCode;    
        }
     }
 }
+
 addKey();
 
-let elements = document.querySelectorAll('.keyboard span');
-let capsy = document.getElementById('20');
-let back = document.getElementById('8');
-let del = document.getElementById('46');
-let ent = document.getElementById('13');
-let tab = document.getElementById('9');
-let inleft = document.getElementById('37');
-let inright = document.getElementById('39');
+const buttons = document.querySelectorAll('.keyboard span');
+const capsy = document.getElementById('20');
+const back = document.getElementById('8');
+const del = document.getElementById('46');
+const ent = document.getElementById('13');
+const tab = document.getElementById('9');
+const inleft = document.getElementById('37');
+const inright = document.getElementById('39');
+const leftShift = document.querySelector('span[data-about=ShiftLeft]');
+const rightShift = document.querySelector('span[data-about=ShiftRight]');
 
-function NotActiveKey(){
-    for (let elem of elements) {
+function deactivateKey(){
+    for (let elem of buttons) {
         if(elem != capsy){
             elem.classList.remove('active');
         }
@@ -141,7 +144,7 @@ function NotActiveKey(){
 function BackLight(){
     document.addEventListener('keydown', function(event) {
         textarea.focus();
-        for (let elem of elements) {
+        for (let elem of buttons) {
            if((elem.id == event.keyCode && !elem.dataset.about) || (elem.id == event.keyCode && elem.dataset.about == event.code)){
                if(elem == capsy) {
                     elem.classList.toggle('active');
@@ -154,7 +157,7 @@ function BackLight(){
     });
 
     document.addEventListener('keyup', function() {   
-        NotActiveKey();
+        deactivateKey();
     });
 }
 
@@ -168,27 +171,35 @@ function insertText(){
         }    
         if(target.classList.contains('darkened') && target.id != 32)
         {
-            if(target === capsy){
-                capsy.classList.toggle('active');
-                CapsLock();
-            }
-            else if(target === back){
-                clearText();
-            }
-            else if(target === del){
-                deleteText();
-            }
-            else if(target === ent){
-                interText();
-            }
-            else if(target === tab){
-                Tab();
-            }
-            else if(target === inleft){
-                inLeftText();
-            }
-            else if(target === inright){
-                inRightText();
+            switch (target) {
+                case capsy:
+                    capsy.classList.toggle('active');
+                    CapsLock();
+                    break;
+                case  back:
+                    clearText();
+                    break;
+                case  del:
+                    deleteText();
+                    break;
+                case  ent:
+                    interText();
+                    break;
+                case  tab:
+                    Tab();
+                    break;
+                case  inleft:
+                    inLeftText();
+                    break;
+                case  inright:
+                    inRightText();
+                    break;
+                case leftShift:
+                    CapsLock();
+                break;
+                case rightShift:
+                    CapsLock();
+                break;
             }
         }
         else
@@ -201,6 +212,9 @@ function insertText(){
     document.addEventListener('mouseup', function(event) {
         let target = event.target.closest('span');
         if(!target) return;
+        if((target === leftShift) || (target === rightShift)){
+             CapsLock();
+            }
         if(target != capsy){
             target.classList.remove('active');
         }
@@ -230,6 +244,7 @@ function runOnKeys(func, ...keys) {
     let pressed = new Set();
 
     document.addEventListener('keydown', function(event) {
+  
       pressed.add(event.key);
 
       for (let key of keys) { 
@@ -237,13 +252,15 @@ function runOnKeys(func, ...keys) {
           return;
         }
       }
+      
       pressed.clear();
 
       func();
+
     });
 
-    document.addEventListener('keyup', function(event) {
-      pressed.delete(event.key);
+    document.addEventListener('keyup', function(event) {      
+        pressed.delete(event.key);
     });
 
 }
@@ -258,13 +275,17 @@ runOnKeys(
     "CapsLock"
 );
 runOnKeys(
+    () => CapsLock(),
+    "Shift"
+);
+runOnKeys(
     () => Tab(),
     "Tab"
 );
 function ChangeLang(){
     for( let i = 0; i < matrix.length; i++ ){
         for( let j = 0; j < matrix[i].length; j++ ){
-            for (let elem of elements) {
+            for (let elem of buttons) {
                 if(elem.id == matrix[i][j].keyCode){ 
                     switch (elem.innerHTML) {
                         case matrix[i][j].en:
@@ -294,7 +315,7 @@ function ChangeLang(){
 function CapsLock(){
     for( let i = 0; i < matrix.length; i++ ){
         for( let j = 0; j < matrix[i].length; j++ ){
-            for (let elem of elements) {
+            for (let elem of buttons) {
                 if(elem.id == matrix[i][j].keyCode){
                     switch (elem.innerHTML) {
                         case matrix[i][j].shifted_en:
